@@ -11,6 +11,7 @@ const pool = new Pool({
 const properties = require('./json/properties.json');
 const users = require('./json/users.json');
 
+
 /// Users
 
 /**
@@ -18,6 +19,7 @@ const users = require('./json/users.json');
  * @param {String} email The email of the user.
  * @return {Promise<{}>} A promise to the user.
  */
+
 
 const getUserWithEmail = (email) => {
   const query = {
@@ -29,6 +31,7 @@ const getUserWithEmail = (email) => {
       .catch((err) => err.message);
 };
 exports.getUserWithEmail = getUserWithEmail;
+
 
 /**
  * Get a single user from the database given their id.
@@ -63,7 +66,9 @@ const addUser =  (user) => {
 };
 exports.addUser = addUser;
 
+
 /// Reservations
+
 
 /**
  * Get all reservations for a single user.
@@ -91,7 +96,6 @@ const getAllReservations = (guest_id, limit = 10) => {
 };
 exports.getAllReservations = getAllReservations;
 
-/// Properties
 
 /**
  * Get all properties.
@@ -99,6 +103,8 @@ exports.getAllReservations = getAllReservations;
  * @param {*} limit The number of results to return.
  * @return {Promise<[{}]>}  A promise to the properties.
  */
+
+
 
 const getAllProperties = function(options, limit = 10) {
   // 1
